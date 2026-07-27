@@ -10,7 +10,7 @@ def main():
         display.show_main_menu()
 
         choice = inputs.get_menu_choice(
-            "Choose an option: ", 1, 3
+            "Choose anq option: ", 1, 3
          )
 
         if choice is None:

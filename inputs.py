@@ -1,13 +1,13 @@
 # input page
 # inputs.py
-
+from display import show_info, show_warning, show_error
 QUIT_WORDS = ("quit", "q", "exit", "e")
 
 
 # This function: Displays a reminder to the user that they can cancel
 # the current operation by typing "quit, q, exit or e."
 def quit_message():
-    print("\nℹ️ Enter (quit/q/exit/e) to cancel current operation")
+    show_info(" Enter (quit/q/exit/e) to cancel current operation")
 
 
 # This function: Checks whether the user's input is a quit command
@@ -30,7 +30,7 @@ def get_menu_choice(prompt, min_choice, max_choice):
         choice = input(prompt).strip()
 
         if is_quit(choice):
-            print("⚠️ Operation cancelled.")
+            show_warning( "Operation cancelled.")
             return None
 
         if choice.isdigit():
@@ -39,7 +39,7 @@ def get_menu_choice(prompt, min_choice, max_choice):
             if min_choice <= choice <= max_choice:
                 return choice
 
-        print("🚫 Error: Invalid menu selection.")
+        show_error("Invalid menu selection.")
 
 
 # Function for Number Input
@@ -57,14 +57,14 @@ def get_number(prompt):
         value = input(prompt).strip()
 
         if is_quit(value):
-            print("⚠️ Operation cancelled.")
+            show_warning( "Operation cancelled.")
             return None
 
         try:
             return float(value)
 
         except ValueError:
-            print("🚫 Error: User response is not a number.")
+            show_error("User response is not a number.")
 
 
 # Function for Yes/No Question
@@ -83,7 +83,7 @@ def get_yes_no(prompt):
         choice = input(prompt).strip()
 
         if is_quit(choice):
-            print("⚠️ Operation cancelled.")
+            show_warning("Operation cancelled.")
             return None
 
         if choice == "1":
@@ -92,7 +92,7 @@ def get_yes_no(prompt):
         if choice == "2":
             return False
 
-        print("🚫 Error: Choose 1 or 2.")
+        show_error("Invalid choice. Choose 1 or 2.")
 
 
 # Function For Decimal Places
@@ -110,7 +110,7 @@ def get_decimal_places():
         value = input("Enter decimal places (0-9): ").strip()
 
         if is_quit(value):
-            print("⚠️ Operation cancelled.")
+            show_warning("Operation cancelled.")
             return None
 
         if value.isdigit():
@@ -119,4 +119,4 @@ def get_decimal_places():
             if 0 <= value <= 9:
                 return value
 
-        print("🚫 Error: Decimal places must be between 0 and 9.")
+        show_error("Decimal places must be between 0 and 9.")

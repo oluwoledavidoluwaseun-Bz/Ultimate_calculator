@@ -1,5 +1,5 @@
 def show_main_menu():
-    print(f"===== 📅 Calculator Menu =====")
+    print(f"===== 📅  Yes,i'm your calculator meanu what do you want 🤨 =====")
     print("1. Calculator 📠")
     print("2. Settings ⚙️")
     print("3. Exit 🚫")
@@ -7,6 +7,7 @@ def show_main_menu():
 
 def show_arithmetic_menu():
     print("===== 📅 Arithmetic Menu =====")
+    print("please make sure to select a valid operation if not ill be pissed 😡")
     print("1. Add")
     print("2. Sub")
     print("3. Mul")
@@ -24,7 +25,7 @@ def show_settings_menu():
     print("1. View current settings")
     print("2. Edit settings")
     print("3. Return to main menu")
-    print("===== 📅 Settings Menu =====")
+    
 
 def show_rerun_menu():
     print("===== 📅 Rerun Calculator Menu =====")
