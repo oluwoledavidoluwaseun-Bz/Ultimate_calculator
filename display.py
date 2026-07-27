@@ -1,9 +1,10 @@
 def show_main_menu():
-    print(f"===== 📅  Yes,i'm your calculator meanu what do you want 🤨 =====")
+    print(f"===== 📅  Yes,i'm your calculator menu what do you want 🤨 =====")
     print("1. Calculator 📠")
     print("2. Settings ⚙️")
     print("3. Exit 🚫")
-    print(f"===== 📅 Calculator Menu =====")
+    print()
+    # print(f"===== 📅 Calculator Menu =====")
 
 def show_arithmetic_menu():
     print("===== 📅 Arithmetic Menu =====")
@@ -18,7 +19,7 @@ def show_arithmetic_menu():
     print("8. Pow")
     print("9. Log")
     print("10. Return")
-    print("===== 📅 Arithmetic Menu =====")
+    # print("===== 📅 Arithmetic Menu =====")
 
 def show_settings_menu():
     print("===== 📅 Settings Menu =====")
@@ -28,10 +29,10 @@ def show_settings_menu():
     
 
 def show_rerun_menu():
-    print("===== 📅 Rerun Calculator Menu =====")
+    print("===== 📅 You wanna run calculator menu again? (cant you just think for yourself😪) =====")
     print("1. Yes")
     print("2. No")
-    print("===== 📅 Rerun Calculator Menu =====")
+    print()
 
 def format_number(number, decimal_places):
     return f"{number:.{decimal_places}f}"
@@ -49,7 +50,7 @@ def show_info(message):
     print(f"ℹ️ Message: {message}")
 
 def show_warning(message):
-    print(f" ⚠️ Warning: {message}")
+    print(f" ⚠️ {message}")
 
 def show_error(message):
     print(f"🚫 Error: {message}")

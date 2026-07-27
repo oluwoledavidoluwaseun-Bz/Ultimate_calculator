@@ -27,15 +27,14 @@ def floordiv(a, b):
     return a // b
 
 
-def mod(a, b):
+def mod(a,b):
     if b == 0:
         raise ZeroDivisionError("Cannot divide by zero.")
     return a % b
 
 
-def exp(a, b):
-    return a ** b
-
+def exp(a):
+    return math.exp(a)
 
 def power(a, b):
     return math.pow(a, b)

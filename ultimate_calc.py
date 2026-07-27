@@ -10,7 +10,7 @@ def main():
         display.show_main_menu()
 
         choice = inputs.get_menu_choice(
-            "Choose anq option: ", 1, 3
+            "Choose an option among the options above the quit message \nbut if you don't choose a valid option I will be mad 😡\nAlso,yes,if you type any of the quit options it would cancel current operation   ", 1, 3
          )
 
         if choice is None:

@@ -42,3 +42,54 @@ def reset_settings():
     """
     global _decimal_places
     _decimal_places = 2
+
+# ---- Previous result / reuse tracking ----    
+
+_previous_result = None
+_reuse_result = False
+_current_operation = None
+
+
+def get_previous_result():
+    """
+    Returns the result of the last calculation, or None if there isn't one yet.
+    """
+    return _previous_result
+
+
+def set_previous_result(value):
+    """
+    Stores the result of the most recent calculation.
+    """
+    global _previous_result
+    _previous_result = value
+
+
+def get_reuse_result():
+    """
+    Returns True/False depending on whether the user chose to reuse the previous result.
+    """
+    return _reuse_result
+
+
+def set_reuse_result(value):
+    """
+    Records whether the user wants to reuse the previous result.
+    """
+    global _reuse_result
+    _reuse_result = value
+
+
+def get_current_operation():
+    """
+    Returns the operation currently being worked on, as (symbol, num1, num2).
+    """
+    return _current_operation
+
+
+def set_current_operation(symbol, num1, num2):
+    """
+    Stores the operation and operands currently being worked on.
+    """
+    global _current_operation
+    _current_operation = (symbol, num1, num2)
