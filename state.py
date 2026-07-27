@@ -1,23 +1,44 @@
-# state.py
+# modules/state.py
 
-state = {"previous_result": None, "reuse_result": False, "current_operation": None,   # e.g. "add", "sub", "div"
-    "num1": None,
-    "num2": None}
+# Stores the calculator settings
 
-config = {"decimal_places": 2}
+_decimal_places = 2
 
-def set_previous_result(value) -> None:
-    state["previous_result"] = value
 
-def get_previous_result():
-    return state["previous_result"]
+def get_decimal_places():
+    """
+    Returns the current number of decimal places.
+    """
+    return _decimal_places
 
-def get_decimal_places() -> int:
-    return config["decimal_places"]
 
-def set_decimal_places(value: int) -> bool:
-    if 0 <= value <= 9:
-        config["decimal_places"] = value
-        return True
-    else:
-        return False
+def set_decimal_places(value):
+    """
+    Updates the decimal places.
+    """
+    global _decimal_places
+
+    if not isinstance(value, int):
+        raise TypeError("Decimal places must be an integer.")
+
+    if value < 0:
+        raise ValueError("Decimal places cannot be negative.")
+
+    _decimal_places = value
+
+
+def get_settings():
+    """
+    Returns all current settings as a dictionary.
+    """
+    return {
+        "decimal_places": _decimal_places
+    }
+
+
+def reset_settings():
+    """
+    Restores the default settings.
+    """
+    global _decimal_places
+    _decimal_places = 2
